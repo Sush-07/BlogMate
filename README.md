@@ -1,75 +1,16 @@
-# Nuxt Minimal Starter
+# BlogMate
+## UI created using NuxtJS for BlogMate
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
-## Setup
 
-Make sure to install dependencies:
+![loginpage](https://github.com/Sush-07/BlogMate/blob/main/screenshots/Login.png?raw=true)  
 
-```bash
-# npm
-npm install
+![signuppage](https://github.com/Sush-07/BlogMate/blob/main/screenshots/Signup.png?raw=true)  
 
-# pnpm
-pnpm install
+![homepage](https://github.com/Sush-07/BlogMate/blob/main/screenshots/Homepage.png?raw=true)  
 
-# yarn
-yarn install
+![newblogpage](https://github.com/Sush-07/BlogMate/blob/main/screenshots/Newblogpage.png?raw=true)  
 
-# bun
-bun install
-```
+![blogsdetailspage](https://github.com/Sush-07/BlogMate/blob/main/screenshots/Blogdetailspage.png?raw=true)  
 
-## Development Server
 
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
