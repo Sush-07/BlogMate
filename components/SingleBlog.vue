@@ -1,10 +1,12 @@
 <script setup>
+import { useAuthStore } from '@/stores/auth'
 defineProps({
     blog: {
         type: Object,
         required: true
     }
 });
+const authStore = useAuthStore()
 </script>
 
 <template>
@@ -16,6 +18,7 @@ defineProps({
 
     <div class="tags mt-4">
       <span v-for="tag in blog.tags" :key="tag" class="tag">{{ tag }}</span>
+      <NuxtLink v-if ="authStore.user._id == blog.author.id" :to="`/blog/edit/${blog._id}`">EDIT</NuxtLink>
     </div>
   </div>
 </template>

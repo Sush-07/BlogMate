@@ -1,17 +1,35 @@
 <script setup>
 import { ref } from 'vue';
 import { useAuthStore } from '@/stores/auth'
+const props = defineProps({
+    blog: {
+        type: Object,
+        required: false
+    },
+    mode: {
+      type: String,
+      required: false
+    }
+});
 
 const authStore = useAuthStore()
-const title = ref('');
-const shortDescription = ref('');
-const content = ref('');
+/**
+ * props: {mode, blogData}
+ * mode === 'update'
+ * const {t,sd, c} = blogData;
+ */
+console.log({props})
+const isEdit = props.mode === "update"
+const title = ref(isEdit ? props.blog.title : '');
+const shortDescription = ref(isEdit ? props.blog.shortDescription:'');
+const content = ref(isEdit ?props.blog.content :'');
 
 const handleSubmit = async() => {
     
   let token =  authStore.token
-  const blogData =  await $fetch("/api/blog",{
-    method: "POST",
+  let route = isEdit ? `/api/blog/${props.blog._id}` : '/api/blog';
+  const blogData =  await $fetch(route,{
+    method: (isEdit ? "PATCH":"POST"),
     body  : {title : title.value , shortDescription : shortDescription.value , content: content.value},
     headers: {
           Authorization: `Bearer ${token}`,
